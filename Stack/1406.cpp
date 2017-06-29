@@ -5,10 +5,10 @@
 using namespace std;
 
 int main() {
-	freopen("Text.txt", "r", stdin);
-	stack<char> s1,s2;
+	//freopen("Text.txt", "r", stdin);
+	stack<char> s1, s2;
 	string a;
-	char b,c;
+	char b, c;
 
 	cin >> a;
 
@@ -24,28 +24,19 @@ int main() {
 		cin >> b;
 
 		if (b == 'L') {
-			if (s1.empty()) {
-				continue;
-			}
-			else {
+			if (!s1.empty()) {
 				s2.push(s1.top());
 				s1.pop();
 			}
 		}
 		else if (b == 'D') {
-			if (s2.empty()) {
-				continue;
-			}
-			else {
+			if (!s2.empty()) {
 				s1.push(s2.top());
 				s2.pop();
 			}
 		}
 		else if (b == 'B') {
-			if (s1.empty()) {
-				continue;
-			}
-			else {
+			if (!s1.empty()) {
 				s1.pop();
 			}
 		}
