@@ -1,8 +1,33 @@
-#include<cstdio>
-char* c[20];
+#include <functional>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 int main() {
-	while (scanf("%10s", c) == 1) {
-		printf("%s\n", c);
+	vector<function<int(int, int)>> d;
+	d.push_back([](int x, int y) {
+		return x + y;
+	});
+	d.push_back([](int x, int y) {
+		return x - y;
+	});
+	d.push_back([](int x, int y) {
+		return x * y;
+	});
+	d.push_back([](int x, int y) {
+		return x / y;
+	});
+	d.push_back([](int x, int y) {
+		return x % y;
+	});
+
+
+	int a, b;
+	cin >> a >> b;
+	for (auto &p : d) {
+		cout << p(a, b) << '\n';
 	}
+
 	return 0;
 }

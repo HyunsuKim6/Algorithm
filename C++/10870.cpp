@@ -1,8 +1,15 @@
-#include<cstdio>
-char* c[20];
+#include <functional>
+#include <iostream>
+
+using namespace std;
+
 int main() {
-	while (scanf("%10s", c) == 1) {
-		printf("%s\n", c);
-	}
+	int n;
+	cin >> n;
+	function<int(int)> f = [&](int n) {
+		if (n <= 1) return n;
+		else return f(n - 1) + f(n - 2);
+	};
+	cout << f(n) << '\n';
 	return 0;
 }

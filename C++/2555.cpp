@@ -1,8 +1,8 @@
-#include<cstdio>
-char* c[20];
+#include <iostream>
+using namespace std;
 int main() {
-	while (scanf("%10s", c) == 1) {
-		printf("%s\n", c);
-	}
-	return 0;
+	auto print = [] {
+		cout << "10/14" << '\n';
+	};
+	print();
 }
